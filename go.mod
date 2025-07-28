@@ -1,6 +1,6 @@
 module github.com/nitroshare/golist
 
-go 1.18.0
+go 1.18
 
 require (
 	github.com/nitroshare/compare v1.0.0
