@@ -37,9 +37,13 @@ func (l *List[T]) Add(v T) *Element[T] {
 func (l *List[T]) Remove(e *Element[T]) *Element[T] {
 	if e.Prev != nil {
 		e.Prev.Next = e.Next
+	} else {
+		l.Front = e.Next
 	}
 	if e.Next != nil {
 		e.Next.Prev = e.Prev
+	} else {
+		l.Back = e.Prev
 	}
 	l.Len--
 	return e.Next

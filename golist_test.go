@@ -44,4 +44,9 @@ func TestList(t *testing.T) {
 	compare.Compare(t, e1.Next, e3, true)
 	compare.Compare(t, e3.Prev, e1, true)
 	compare.Compare(t, e3.Next, nil, true)
+	l.Remove(e1)
+	l.Remove(e3)
+	compare.Compare(t, l.Len, 0, true)
+	compare.Compare(t, l.Back, nil, true)
+	compare.Compare(t, l.Front, nil, true)
 }
