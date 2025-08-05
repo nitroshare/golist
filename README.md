@@ -28,4 +28,10 @@ for e := l.Front; e != nil; e = e.Next {
 
     // e.Next will still point to what was going to be the next item
 }
+
+// Remove and return the first element (useful for a queue)
+e := l.PopFront()
+
+// Remove and return the last element (useful for a stack)
+e := l.PopBack()
 ```

@@ -48,3 +48,23 @@ func (l *List[T]) Remove(e *Element[T]) *Element[T] {
 	l.Len--
 	return e.Next
 }
+
+// PopFront removes the first element and returns it. This will return nil if
+// there are no elements in the list.
+func (l *List[T]) PopFront() *Element[T] {
+	e := l.Front
+	if e != nil {
+		l.Remove(e)
+	}
+	return e
+}
+
+// PopBack removes the last element and returns it. This will return nil if
+// there are no elements in the list.
+func (l *List[T]) PopBack() *Element[T] {
+	e := l.Back
+	if e != nil {
+		l.Remove(e)
+	}
+	return e
+}

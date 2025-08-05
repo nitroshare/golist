@@ -50,3 +50,15 @@ func TestList(t *testing.T) {
 	compare.Compare(t, l.Back, nil, true)
 	compare.Compare(t, l.Front, nil, true)
 }
+
+func TestPop(t *testing.T) {
+	var (
+		l  = &List[string]{}
+		e1 = l.Add(value1)
+		e2 = l.Add(value1)
+	)
+	ef := l.PopFront()
+	compare.Compare(t, ef, e1, true)
+	eb := l.PopBack()
+	compare.Compare(t, eb, e2, true)
+}
